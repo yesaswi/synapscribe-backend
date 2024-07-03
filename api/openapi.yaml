@@ -1,0 +1,308 @@
+swagger: "2.0"
+info:
+  title: "SynapScribe API"
+  description: "API for SynapScribe, an AI-enhanced note-taking application"
+  version: "1.0.0"
+basePath: "/api/v1"
+schemes:
+  - "https"
+consumes:
+  - "application/json"
+  - "multipart/form-data"
+produces:
+  - "application/json"
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+paths:
+  /users/register:
+    post:
+      summary: "Register a new user"
+      operationId: "UserRegistration"
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserRegistration"
+      responses:
+        201:
+          description: "User successfully registered"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        400:
+          $ref: "#/responses/BadRequest"
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-registration
+    options:
+      summary: CORS support
+      operationId: userRegistrationOptions
+      responses:
+        "200":
+          description: CORS support
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-registration
+
+  /users/login:
+    post:
+      summary: "Authenticate user"
+      operationId: "UserAuthentication"
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserCredentials"
+      responses:
+        200:
+          description: "User successfully authenticated"
+          schema:
+            $ref: "#/definitions/AuthResponse"
+        401:
+          $ref: "#/responses/Unauthorized"
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-authentication
+    options:
+      summary: CORS support
+      operationId: userAuthenticationOptions
+      responses:
+        "200":
+          description: CORS support
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-authentication
+
+  /users/profile:
+    get:
+      summary: "Get user profile"
+      operationId: "GetUserProfile"
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: "User profile retrieved successfully"
+          schema:
+            $ref: "#/definitions/UserProfile"
+        404:
+          $ref: "#/responses/NotFound"
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-profile-management
+    put:
+      summary: "Update user profile"
+      operationId: "UpdateUserProfile"
+      security:
+        - Bearer: []
+      parameters:
+        - name: profile
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/UserProfileUpdate"
+      responses:
+        200:
+          description: "User profile updated successfully"
+          schema:
+            $ref: "#/definitions/UserProfile"
+        400:
+          $ref: "#/responses/BadRequest"
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-profile-management
+    options:
+      summary: CORS support
+      operationId: userProfileOptions
+      responses:
+        "200":
+          description: CORS support
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/user-profile-management
+
+  /media/upload:
+    post:
+      summary: "Upload media file (audio, video, or image)"
+      operationId: "MediaUpload"
+      consumes:
+        - "multipart/form-data"
+      parameters:
+        - name: file
+          in: formData
+          description: "The file to upload"
+          type: string
+          format: binary
+          required: true
+      responses:
+        200:
+          description: "File uploaded successfully"
+          schema:
+            $ref: "#/definitions/MediaUploadResponse"
+        400:
+          $ref: "#/responses/BadRequest"
+        401:
+          $ref: "#/responses/Unauthorized"
+        500:
+          $ref: "#/responses/InternalServerError"
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/media-upload
+    options:
+      summary: CORS support
+      operationId: mediaUploadOptions
+      responses:
+        "200":
+          description: CORS support
+      x-google-backend:
+        address: https://us-east4-synapscribe.cloudfunctions.net/media-upload
+
+  /audio/process:
+    post:
+      summary: "Process audio file"
+      operationId: "ProcessAudio"
+      consumes:
+        - "multipart/form-data"
+      parameters:
+        - name: file
+          in: formData
+          description: "The audio file to process"
+          type: string
+          format: binary
+          required: true
+      responses:
+        200:
+          description: "Audio processed successfully"
+          schema:
+            $ref: "#/definitions/AudioProcessResponse"
+        400:
+          $ref: "#/responses/BadRequest"
+        401:
+          $ref: "#/responses/Unauthorized"
+        500:
+          $ref: "#/responses/InternalServerError"
+      x-google-backend:
+        address: https://us-east5-synapscribe.cloudfunctions.net/process-audio
+        deadline: 300.0
+    options:
+      summary: CORS support
+      operationId: processAudioOptions
+      responses:
+        "200":
+          description: CORS support
+      x-google-backend:
+        address: https://us-east5-synapscribe.cloudfunctions.net/process-audio
+        deadline: 300.0
+
+definitions:
+  UserRegistration:
+    type: object
+    required:
+      - email
+      - password
+      - name
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+
+  UserCredentials:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+
+  UserResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+
+  AuthResponse:
+    type: object
+    properties:
+      token:
+        type: string
+      user:
+        $ref: "#/definitions/UserResponse"
+
+  UserProfile:
+    type: object
+    properties:
+      id:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+      createdAt:
+        type: string
+        format: date-time
+
+  UserProfileUpdate:
+    type: object
+    properties:
+      name:
+        type: string
+
+  MediaUploadResponse:
+    type: object
+    properties:
+      fileUrl:
+        type: string
+        description: "The URL of the uploaded file"
+      fileName:
+        type: string
+        description: "The name of the uploaded file"
+      fileType:
+        type: string
+        description: "The type of the uploaded file (audio, video, or image)"
+      uploadedAt:
+        type: string
+        format: date-time
+        description: "The timestamp when the file was uploaded"
+
+  AudioProcessResponse:
+    type: object
+    properties:
+      transcript:
+        type: string
+        description: "The transcribed text from the audio file"
+      analysis:
+        type: string
+        description: "The AI-generated analysis of the transcribed text"
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+
+responses:
+  BadRequest:
+    description: "Bad request"
+    schema:
+      $ref: "#/definitions/Error"
+  Unauthorized:
+    description: "Unauthorized"
+    schema:
+      $ref: "#/definitions/Error"
+  NotFound:
+    description: "Resource not found"
+    schema:
+      $ref: "#/definitions/Error"
+  InternalServerError:
+    description: "Internal server error"
+    schema:
+      $ref: "#/definitions/Error"

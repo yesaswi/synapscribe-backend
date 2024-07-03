@@ -1,0 +1,75 @@
+# Morning
+
+6:45 AM: Alarm goes off. Today's a big day - we're starting quality control testing on a new batch of oxycodone tablets. Need to be extra focused.
+
+7:30 AM: Heading to work. Reviewing the DEA regulations for handling Schedule II controlled substances in my head. Can't be too careful with this stuff.
+
+8:00 AM: Arriving at Amneal Pharmaceuticals. Using my special clearance badge to enter the high-security wing where we handle controlled substances.
+
+8:05 AM: Entering the secure QC lab. Donning my lab coat, safety glasses, and special color-coded gloves we use for opioid testing. 
+
+8:10 AM: Logging into the Laboratory Information Management System (LIMS). Checking for any updates to controlled substance handling protocols.
+
+8:20 AM: Reviewing today's testing schedule:
+1. Raw material testing for a new batch of oxycodone HCl API
+2. In-process testing for our ongoing hydrocodone/acetaminophen tablet production
+3. Stability testing for our 6-month extended-release morphine sulfate tablets
+4. Cleaning verification for the controlled substance production room
+
+8:30 AM: Starting with the raw material testing for oxycodone HCl. First step: checking out the sample from our DEA-compliant safe. Two-person verification required for this.
+
+8:45 AM: Conducting visual and microscopic inspection of the oxycodone HCl. Looks consistent with reference standards. Documenting meticulously in our controlled substance logbook.
+
+9:00 AM: Setting up for melting point determination. This is crucial for verifying the identity and purity of opioid compounds.
+
+9:30 AM: Melting point checks out. Moving on to FT-IR analysis for further identity confirmation. 
+
+10:00 AM: Preparing samples for HPLC analysis. This will help us quantify the oxycodone and detect any impurities. Extra care taken to avoid any loss of material.
+
+10:30 AM: HPLC run is underway. While that's going, I'm setting up for specific optical rotation test - another key identifier for oxycodone HCl.
+
+11:15 AM: All morning tests on the oxycodone API are complete. Results look good. Double-checking all calculations and ensuring every microgram is accounted for.
+
+11:30 AM: Team huddle time. Briefing the controlled substance QC team on the oxycodone testing progress. Discussing the upcoming DEA audit and making sure we're all prepared.
+
+11:45 AM: Securely storing all test samples back in the safe. Reconciling every milligram used for testing.
+
+# Afternoon
+
+12:30 PM: Quick lunch break in the secure break room. No phones allowed in here to prevent any photos or unauthorized communication.
+
+1:00 PM: Back to the lab. Time to focus on in-process testing for the hydrocodone/acetaminophen tablets.
+
+1:15 PM: Received samples from the production floor. These tablets are from the middle of the production run. Need to check weight, hardness, and drug content.
+
+1:30 PM: Starting with tablet weight uniformity testing. Using a calibrated analytical balance to weigh 20 tablets individually. Recording each weight with extreme precision.
+
+2:00 PM: Moving on to hardness testing. This ensures the tablets will hold up during packaging and transport but still dissolve properly when taken.
+
+2:30 PM: Preparing for dissolution testing. This is crucial to ensure both the hydrocodone and acetaminophen are releasing at the correct rates. Setting up the dissolution apparatus in the fume hood for extra safety.
+
+3:15 PM: Dissolution test complete. Preparing samples for HPLC analysis to quantify both active ingredients.
+
+3:45 PM: While HPLC is running, starting on the stability testing for our extended-release morphine sulfate tablets. These have been in climate-controlled storage for 6 months.
+
+4:15 PM: Conducting visual inspection of the morphine tablets. Checking for any changes in color or appearance that might indicate degradation.
+
+4:45 PM: Setting up for dissolution testing on the stability samples. This will tell us if the extended-release properties are still functioning after storage.
+
+5:30 PM: All tests are complete. Compiling data and double-checking all calculations. Any discrepancies in controlled substance testing need to be investigated immediately.
+
+6:00 PM: Preparing for tomorrow's cleaning verification of the controlled substance production room. This is critical to prevent cross-contamination between different opioid products.
+
+6:30 PM: Final reconciliation of all controlled substances used for testing today. Every microgram must be accounted for.
+
+7:00 PM: One last check of the secure laboratory. All samples locked in the safe, all equipment properly shut down, all documentation complete.
+
+7:15 PM: Logging out and exiting the secure area. Feeling the weight of responsibility lift as I leave the controlled substance wing.
+
+# Evening
+
+8:00 PM: At home, reviewing CDC guidelines on opioid safety. Staying up-to-date is crucial in this field.
+
+9:00 PM: Reflecting on the day. The work we do in QC is a key part of ensuring that these powerful medications are safe and effective for patients who truly need them.
+
+10:30 PM: Heading to bed. Tomorrow we're expecting a visit from the DEA to review our protocols. Need to be well-rested and sharp.
